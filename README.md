@@ -1,6 +1,12 @@
+<img src="./static/zhihu.png" alt="logo" width="160" height="160" align="right">
+
 # 仿知乎RESTful接口
 
-此项目用于学习RESTful规范，并基于Koa实现的仿知乎服务端API项目。
+![](https://img.shields.io/badge/runtime-Node.js-blue.svg)
+![](https://img.shields.io/badge/version-v1.0.0-skygrey.svg)
+![](https://img.shields.io/badge/platform-Linux|MacOS|Windows-orange.svg)
+
+此项目用于学习RESTful规范，并基于Koa实现的仿知乎服务端API项目🧢。
 
 ## 异常处理
 
@@ -47,3 +53,21 @@ app.use(error({
   "status": 404
 }
 ```
+
+## NoSQL
+
+> 项目采用 NoSQL 管理数据。MongoDB，来源于英文单词 “Humongous”，中文含义为庞大
+
+MongoDB是文档存储数据库，项目以学习规范为主，因此不考虑其他因素的情况下，选择 NoSQL 有以下优点：
+
+- 简单（没有原子性、一致性、隔离性等复杂规范）
+- 便于横向拓展（增加服务器数量，存储容量等）
+- 适合超大规模的数据存储
+- 很灵活的存储复杂结构的数据（Schema Free）
+
+选择 MongoDB 有如下理由：
+
+- 性能好（内存计算）
+- 大规模数据存储（可拓展性）
+- 可靠安全（本地复制、自动故障转移）
+- 方便存储复杂的数据结构（Schema Free）
