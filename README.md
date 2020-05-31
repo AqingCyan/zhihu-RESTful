@@ -1,4 +1,4 @@
-<img src="./static/zhihu.png" alt="logo" width="160" height="160" align="right">
+<img src="https://i.loli.net/2020/05/31/scWhOA8VYT92vyj.png" alt="logo" width="160" height="160" align="right">
 
 # 仿知乎RESTful接口
 
@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/version-v1.0.0-skygrey.svg)
 ![](https://img.shields.io/badge/platform-Linux|MacOS|Windows-orange.svg)
 
-此项目用于学习RESTful规范，并基于Koa实现的仿知乎服务端API项目🧢。
+🧢此项目用于学习RESTful规范，并基于Koa实现的仿知乎服务端API项目。
 
 ## 异常处理
 
@@ -73,3 +73,8 @@ MongoDB是文档存储数据库，项目以学习规范为主，因此不考虑�
 - 方便存储复杂的数据结构（Schema Free）
 
 > 项目使用 MongoDB Atlas 作为数据库服务
+
+## 参考
+
+- [免费试用MongoDB云数据库 （MongoDB Atlas）教程](https://www.cnblogs.com/xybaby/p/9460634.html)
+- [Node.js仿知乎服务端-深入理解RESTful API](https://coding.imooc.com/class/354.html)
