@@ -10,6 +10,10 @@ class UsersCtl {
   }
 
   create(ctx) {
+    ctx.verifyParams({
+      name: { type: 'string', required: true },
+      age: { type: 'number', required: false },
+    })
     db.push(ctx.request.body)
     ctx.body = ctx.request.body
   }
