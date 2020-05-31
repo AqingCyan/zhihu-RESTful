@@ -1,0 +1,22 @@
+/**
+ * This is routing management under user (/user/xxx)
+ */
+const Router = require('koa-router')
+const { find, findById, create, update, delete: deleteUser } = require('../controllers/users')
+
+const router = new Router({ prefix: '/users' })
+
+/**
+ * Get user list
+ * Create one user
+ * Queries specify user information
+ * Change specify user information
+ * Delete specify user
+ */
+router.get('/', find)
+router.post('/', create)
+router.get('/:id', findById)
+router.put('/:id', update)
+router.delete('/:id', deleteUser)
+
+module.exports = router
