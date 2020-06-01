@@ -1,4 +1,6 @@
+const jwt = require('jsonwebtoken')
 const User = require('../models/user')
+const { secret } = require('../../config')
 const { handleUserResponse } = require('../../utils/responseBody')
 
 class UsersCtl {
@@ -49,6 +51,20 @@ class UsersCtl {
     }
     ctx.status = 204
     ctx.body = { message: 'success' }
+  }
+
+  async login(ctx) {
+    ctx.verifyParams({
+      name: { type: 'string', required: true },
+      password: { type: 'string', required: true },
+    })
+    const user = await User.findOne(ctx.request.body)
+    if (!user) {
+      ctx.throw(401, 'The user name or password is incorrect')
+    }
+    const { name, _id } = user
+    const token = jwt.sign({ _id, name }, secret, { expiresIn: '1d' })
+    ctx.body = { message: 'success', token }
   }
 }
 

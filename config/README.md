@@ -6,6 +6,7 @@
 
 ```js
 module.exports = {
-  connectionStr: '你的 MongoDB Atlas 链接 code'
+  connectionStr: '你的 MongoDB Atlas 链接 code',
+   secret: '你的 jwt 加密密码',
 }
 ```
