@@ -9,7 +9,11 @@ const { connectionStr } = require('../config')
 const app = new Koa()
 
 // Connect MongoDB Atlas
-mongoose.connect(connectionStr, { useNewUrlParser: true }, () => console.log('MongoDB connect success'))
+mongoose.connect(connectionStr, {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+}, () => console.log('MongoDB connect success'))
 mongoose.connection.on('error', console.error)
 
 /**

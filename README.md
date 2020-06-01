@@ -74,6 +74,22 @@ MongoDB是文档存储数据库，项目以学习规范为主，因此不考虑�
 
 > 项目使用 MongoDB Atlas 作为数据库服务
 
+## JWT
+
+用户信息认证采用 JWT 技术，而非 Session
+
+**什么是JWT**：
+
+- JSON Web Token 是一个开放的标准（RFC7519）
+- 定义了一种紧凑且独立的方式，可以将各方之间的信息作为JSON对象进行安全传输
+- 该信息可以验证和信任，因为是经过数字签名的
+
+**构成**：
+
+- 头部（Header）：本质JSON，两个字段：typ（token的类型，这里固定为JWT），alg（使用的hash算法，例如：HMAC SHA256或者RSA）。
+- 有效载荷（Payload）：存储需要传递的信息，如用户ID、用户名等。还包含元数据，如过期时间、发布人等，与Header不同，payload可以加密。
+- 签名（Signature）：对Header和Payload部分进行签名。保证Token在传输过程中没有被篡改或者损坏。
+
 ## 参考
 
 - [免费试用MongoDB云数据库 （MongoDB Atlas）教程](https://www.cnblogs.com/xybaby/p/9460634.html)
