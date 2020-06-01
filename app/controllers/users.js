@@ -49,7 +49,6 @@ class UsersCtl {
     if (!user) {
       ctx.throw(404, 'The user doesn\'t exist，and can\'t delete')
     }
-    ctx.status = 204
     ctx.body = { message: 'success' }
   }
 

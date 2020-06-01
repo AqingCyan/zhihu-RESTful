@@ -3,6 +3,7 @@
  */
 const Router = require('koa-router')
 const { find, findById, create, update, delete: deleteUser, login } = require('../controllers/users')
+const userAuthMiddleWare = require('../../middlewares/userAuth')
 
 const router = new Router({ prefix: '/users' })
 
@@ -17,8 +18,8 @@ const router = new Router({ prefix: '/users' })
 router.get('/', find)
 router.post('/', create)
 router.get('/:id', findById)
-router.patch('/:id', update)
-router.delete('/:id', deleteUser)
+router.patch('/:id', userAuthMiddleWare, update)
+router.delete('/:id', userAuthMiddleWare, deleteUser)
 router.post('/login', login)
 
 module.exports = router
