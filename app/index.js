@@ -22,7 +22,7 @@ mongoose.connection.on('error', console.error)
  * Detail in README
  */
 const errHandle = {
-  postFormat: (err, { stack, ...rest }) => (
+  postFormat: (_, { stack, ...rest }) => (
     process.env.NODE_ENV === 'production' ? rest : { stack, ...rest }
   )
 }
