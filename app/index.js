@@ -1,5 +1,7 @@
 const Koa = require('koa')
-const bodyparser = require('koa-bodyparser')
+const path = require('path')
+const koaBody = require('koa-body')
+const static = require('koa-static')
 const error = require('koa-json-error')
 const parameter = require('koa-parameter')
 const mongoose = require('mongoose')
@@ -29,13 +31,21 @@ const errHandle = {
 
 /**
  * The middlewares used by Koa
+ * koa-static：Setting static resources
  * koa-json-error：Error handling and response to JSON
- * koa-bodyparser：Parsing the Body
+ * koaBody：Parsing the Body
  * koa-parameter：Parameter calibration
  * Batch registration route
  */
+app.use(static(path.join(__dirname, 'public')))
 app.use(error(errHandle))
-app.use(bodyparser())
+app.use(koaBody({
+  multipart: true,
+  formidable: {
+    uploadDir: path.join(__dirname, 'public/uploads'),
+    keepExtensions: true,
+  },
+}))
 app.use(parameter(app))
 routing(app)
 
