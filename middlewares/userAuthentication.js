@@ -1,5 +1,5 @@
 /**
- * User authentication and authorization
+ * The user authentication
  */
 const jwt = require('jsonwebtoken')
 const { secret } = require('../config')
